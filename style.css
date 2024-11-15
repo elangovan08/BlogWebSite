@@ -1,0 +1,80 @@
+/* Global Styles */
+body {
+    background-image:url(./BGI.jpg);
+    background-color: aqua;
+    font-family: Arial, sans-serif;
+    padding-top: 70px;
+}
+
+/* Navbar */
+.navbar {
+    height: 100px;
+    box-shadow: 10px 7px 2px rgba(58, 12, 224, 0.1);
+}
+
+.nav-link.active, .nav-link:hover {
+    color: pink !important;
+}
+
+/* Header Widgets */
+.header-widgets {
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(28, 128, 128);
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.sidebar {
+    width: 45%;
+    background-color: #135d7a;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.container my-5{
+    color: #18c2ce;
+}
+.sidebar h4 {
+    color: #0056b3;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+#hello{
+    align-items: center;
+}
+/* Categories */
+.categories li a {
+    color: #0056b3;
+    background-color: #18c1df;
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: inline-block;
+    margin-bottom: 8px;
+    transition: 0.3s;
+}
+
+.categories li a:hover {
+    background-color: #d0e2ff;
+}
+
+/* Popular Posts */
+.popular-posts li {
+    background-color: rgb(30, 207, 207);
+    padding: 8px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.popular-posts li:hover {
+    background-color: #f1f4f9;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #ffffff;
+}
