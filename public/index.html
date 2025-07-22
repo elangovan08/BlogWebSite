@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#2d6a4f" />
+    <meta name="description" content="EcoVoice - A platform for environmental awareness, climate action, and sustainable living. Join our community of eco-warriors fighting for our planet." />
+    <meta name="keywords" content="environment, climate change, sustainability, eco-conscious, pollution, nature protection, global warming, green living" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ecovoice-blog.com/" />
+    <meta property="og:title" content="EcoVoice - Environmental Awareness Blog" />
+    <meta property="og:description" content="Join the movement for environmental protection, climate action, and sustainable living. Share stories, raise awareness, and make a difference." />
+    <meta property="og:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ecovoice-blog.com/" />
+    <meta property="twitter:title" content="EcoVoice - Environmental Awareness Blog" />
+    <meta property="twitter:description" content="Join the movement for environmental protection, climate action, and sustainable living." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/og-image.jpg" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "EcoVoice",
+      "description": "Environmental awareness blog platform",
+      "url": "https://ecovoice-blog.com",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ecovoice-blog.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <title>EcoVoice - Environmental Awareness Blog</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    
+    <!-- Performance monitoring script -->
+    <script>
+      // Performance monitoring
+      window.addEventListener('load', function() {
+        if ('performance' in window) {
+          const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+          console.log('Page load time:', loadTime + 'ms');
+          
+          // Report Core Web Vitals
+          if ('PerformanceObserver' in window) {
+            // LCP
+            new PerformanceObserver((list) => {
+              const entries = list.getEntries();
+              const lastEntry = entries[entries.length - 1];
+              console.log('LCP:', lastEntry.startTime);
+            }).observe({entryTypes: ['largest-contentful-paint']});
+            
+            // FID
+            new PerformanceObserver((list) => {
+              const entries = list.getEntries();
+              entries.forEach((entry) => {
+                console.log('FID:', entry.processingStart - entry.startTime);
+              });
+            }).observe({entryTypes: ['first-input']});
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
