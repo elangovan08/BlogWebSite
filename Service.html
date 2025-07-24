@@ -1,42 +1,429 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Navbar</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Services - My Blog</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <style>
+    /* Insert your full CSS styles from earlier here (your custom theme) */
+    :root {
+      --primary-color: #2563eb;
+      --primary-dark: #1d4ed8;
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --border-color: #e2e8f0;
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --transition-fast: 0.15s ease-in-out;
+    }
+
+    [data-theme="dark"] {
+      --text-primary: #f1f5f9;
+      --text-secondary: #cbd5e1;
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --border-color: #334155;
+    }
+
+    body {
+      font-family: var(--font-family);
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      padding-top: 76px;
+    }
+
+    .navbar-custom {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    [data-theme="dark"] .navbar-custom {
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--text-primary) !important;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: var(--text-secondary) !important;
+      transition: color 0.15s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link[aria-current="page"] {
+      color: var(--primary-color) !important;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .service-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+      text-align: center;
+      height: 100%;
+    }
+
+    .service-card:hover {
+      background: var(--bg-primary);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      font-size: 40px;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+    }
+
+    .footer {
+      background: #0f172a;
+      color: white;
+      padding: 2rem 0;
+      margin-top: 4rem;
+      text-align: center;
+    }
+   
+    h1 {
+      margin: 0.5rem 0;
+    }
+    section {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .bad-things, .our-services {
+      margin-bottom: 2rem;
+    }
+    .section-title {
+      font-size: 1.8rem;
+      color: #1b5e20;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style-type: circle;
+      margin-left: 1.5rem;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .service-item {
+      background: #f4fff4;
+      border: 1px solid #c5e1a5;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+    }
+    .service-item:hover {
+      transform: scale(1.02);
+    }
+    .service-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">My Blog</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Post.html">Post</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./Service.html">Service</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./contact.html">Contact</a>
-        </li>
-      </ul>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/index.html"><i class="bi bi-journal-text me-2"></i>My Blog</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/post.html">Posts</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/Service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="./about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="./contact.html">Contact</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
-  <!-- Navbar End -->
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+<section class="bad-things">
+  <h2 class="section-title">Problems with Other Eco Platforms</h2>
+  <ul>
+    <li>Too much focus on ad revenue and affiliate links</li>
+    <li>No real-time updates on eco movements or local events</li>
+    <li>Lack of interactive features for users to engage or protest</li>
+    <li>Superficial content not backed by real data</li>
+    <li>Overloaded with greenwashing content from corporations</li>
+  </ul>
+</section>
+
+<section class="our-services">
+  <h2 class="section-title">EcoBlog Services & Offerings</h2>
+  <div class="service-grid">
+    
+    <div class="service-item">
+      <img src="https://source.unsplash.com/featured/?nature,climate" alt="Eco Trends">
+      <h3>Real-Time Eco Trends</h3>
+      <p>We analyze global patterns and give you data-backed eco trends every week.</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://source.unsplash.com/featured/?protest,climate" alt="Protest Awareness">
+      <h3>Protest & Awareness</h3>
+      <p>Highlighting local and global eco protests, helping people join and raise voices for nature.</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://source.unsplash.com/featured/?news,environment" alt="Eco News">
+      <h3>Daily Eco News</h3>
+      <p>Our platform curates and delivers daily environmental news from trusted sources worldwide.</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://source.unsplash.com/featured/?pollution,air" alt="Pollution Updates">
+      <h3>Pollution Alerts</h3>
+      <p>Live updates and data visualizations for pollution levels in major cities and affected areas.</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://source.unsplash.com/featured/?recycling,earth" alt="Eco Challenges">
+      <h3>Weekly Eco Challenges</h3>
+      <p>Gamified weekly tasks like plastic-free days, tree-planting, and eco-journaling to inspire users.</p>
+    </div>
+
+    <div class="service-item">
+      <img src="https://source.unsplash.com/featured/?forest,community" alt="Community">
+      <h3>Eco-Conscious Community</h3>
+      <p>Connect with like-minded people, share green habits, and take pledges toward sustainability.</p>
+    </div>
+
+  </div>
+     <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">My Blog</h5>
+                    <p class="text-light mb-3">Sharing knowledge, stories, and insights with our readers worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Follow us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Follow us on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="./posts.html" class="text-light text-decoration-none">Posts</a></li>
+                        <li class="mb-2"><a href="./about.html" class="text-light text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="./contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Technology</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Lifestyle</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Business</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Travel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6 class="mb-3">Newsletter</h6>
+                    <p class="text-light small mb-3">Subscribe to get our latest posts delivered to your inbox.</p>
+                    <form class="newsletter-form" novalidate>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email" 
+                                   aria-label="Email for newsletter" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="border-secondary">
+            
+            <div class="row py-3">
+                <div class="col-md-6">
+                    <p class="text-light small mb-0">&copy; 2024 My Blog. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none small">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none small">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none small">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+     <!-- Scripts loaded at the end for better performance -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- Optimized JavaScript -->
+    <script>
+        // Theme Toggle Functionality
+        class ThemeManager {
+            constructor() {
+                this.theme = localStorage.getItem('theme') || 'light';
+                this.init();
+            }
+            
+            init() {
+                this.applyTheme();
+                document.getElementById('theme-toggle')?.addEventListener('click', () => this.toggleTheme());
+            }
+            
+            applyTheme() {
+                document.documentElement.setAttribute('data-theme', this.theme);
+                const icon = document.getElementById('theme-icon');
+                if (icon) {
+                    icon.className = this.theme === 'dark' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+                }
+            }
+            
+            toggleTheme() {
+                this.theme = this.theme === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', this.theme);
+                this.applyTheme();
+            }
+        }
+        
+        // Newsletter Form Handler
+        class NewsletterManager {
+            constructor() {
+                this.bindForms();
+            }
+            
+            bindForms() {
+                document.querySelectorAll('.newsletter-form').forEach(form => {
+                    form.addEventListener('submit', (e) => this.handleSubmit(e));
+                });
+            }
+            
+            handleSubmit(e) {
+                e.preventDefault();
+                const form = e.target;
+                const email = form.querySelector('input[type="email"]').value.trim();
+                
+                if (!this.isValidEmail(email)) {
+                    this.showNotification('Please enter a valid email address.', 'warning');
+                    return;
+                }
+                
+                // Simulate subscription
+                form.reset();
+                this.showNotification('Successfully subscribed to our newsletter!', 'success');
+            }
+            
+            isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+            
+            showNotification(message, type) {
+                const notification = document.createElement('div');
+                notification.className = 'alert alert-' + type + ' alert-dismissible fade show position-fixed';
+                notification.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
+                notification.innerHTML = message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>';
+                
+                document.body.appendChild(notification);
+                setTimeout(function() { if(notification.parentNode) notification.remove(); }, 5000);
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        function initSmoothScroll() {
+            document.addEventListener('click', function(e) {
+                if (e.target.matches('a[href^="#"]')) {
+                    e.preventDefault();
+                    const target = document.querySelector(e.target.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+        
+        // Back to top button
+        function createBackToTopButton() {
+            const backToTop = document.createElement('button');
+            backToTop.innerHTML = '<i class="bi bi-arrow-up"></i>';
+            backToTop.className = 'btn btn-primary position-fixed';
+            backToTop.style.cssText = 'bottom: 20px; right: 20px; z-index: 1000; border-radius: 50%; width: 50px; height: 50px; opacity: 0; visibility: hidden; transition: all 0.3s ease;';
+            backToTop.setAttribute('aria-label', 'Back to top');
+            
+            document.body.appendChild(backToTop);
+            
+            function toggleVisibility() {
+                if (window.scrollY > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                }
+            }
+            
+            window.addEventListener('scroll', toggleVisibility);
+            backToTop.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+        
+        // Initialize everything when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            new ThemeManager();
+            new NewsletterManager();
+            initSmoothScroll();
+            createBackToTopButton();
+        });
+        
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            if ('performance' in window) {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log('Page load time: ' + loadTime + 'ms');
+            }
+        });
+    </script>
+    </body>
 </html>
