@@ -1,98 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - My Blog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - EcoPulse</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0fdf4;
+      color: #1a202c;
+    }
+    .hero {
+      background: linear-gradient(to right, #16a34a, #22c55e);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .section-title {
+      color: #065f46;
+      margin-bottom: 1rem;
+    }
+    .feature-box {
+      background-color: #ffffff;
+      border: 1px solid #d1fae5;
+      border-radius: 1rem;
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(22, 163, 74, 0.2);
+    }
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #16a34a;
+    }
+    footer {
+      background-color: #065f46;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-    <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-navy" style="background-color: rgb(36, 53, 110);">
-        <a class="navbar-brand" href="#">My Blog</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="./index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./post.html">Posts</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./Service.html">Service</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <!-- Navbar End -->
-    <!-- About Us Section -->
-    <div class="container my-5">
-        <div class="hello1" style="color: darkseagreen;">
-                <h2 class="text-center mb-4">About Us</h2>
-                <p class="lead text-center">Welcome to My Blog! We're passionate about sharing knowledge, stories, and insights with our readers.</p>
-       </div>
- 
-        <!-- Mission and Vision -->
-        <div class="row my-5" style="color: darkseagreen;">
-            <div class="col-md-6">
-                <h3>Our Mission</h3>
-                <p>Our mission is to provide high-quality content that informs, educates, and inspires. We believe in the power of information and aim to make it accessible to everyone.</p>
-            </div>
-            <div class="col-md-6">
-                <h3>Our Vision</h3>
-                <p>We envision a world where knowledge is shared freely, where people can learn and grow through our platform, and where diverse voices are heard and valued.</p>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-success" href="#">EcoPulse</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="posts.html">Posts</a></li>
+          <li class="nav-item"><a class="nav-link" href="Service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-        <!-- Meet the Team -->
-        <h3 class="text-center my-4">Meet the Team</h3>
-        <div class="row g-4" style="color: darkseagreen;">
-            <!-- Team Member 1 -->
-            <div class="col-md-4 text-center">
-                <img src="./TechIm.png" class="rounded-circle mb-3" alt="Team Member 1" width="150" height="150">
-                <h5>John Doe</h5>
-                <p class="text-muted">Founder & Editor-in-Chief</p>
-                <p>John is a passionate writer with over 10 years of experience in digital content creation. He oversees all editorial decisions at My Blog.</p>
-            </div>
-            <!-- Team Member 2 -->
-            <div class="col-md-4 text-center">
-                <img src="./im2.jfif" class="rounded-circle mb-3" alt="Team Member 2" width="150" height="150">
-                <h5>Jane Smith</h5>
-                <p class="text-muted">Content Strategist</p>
-                <p>Jane is an expert in content strategy and SEO, ensuring that our articles reach the widest possible audience.</p>
-            </div>
-            <!-- Team Member 3 -->
-            <div class="col-md-4 text-center">
-                <img src="./Im3.jfif" class="rounded-circle mb-3" alt="Team Member 3" width="150" height="150">
-                <h5>David Brown</h5>
-                <p class="text-muted">Lead Designer</p>
-                <p>David brings our stories to life visually. His designs are both aesthetic and functional, enhancing reader experience.</p>
-            </div>
-        </div>
+  <section class="hero">
+    <h1 class="display-4 fw-bold">We Are the Voice of the Earth</h1>
+    <p class="lead">Empowering eco-awareness through timely updates, stories, and environmental education.</p>
+  </section>
 
-        <!-- Call-to-Action -->
-        <div class="text-center my-5" style="color: darkseagreen;">
-            <h4>Want to Learn More?</h4>
-            <p>Stay updated with our latest posts by subscribing to our newsletter.</p>
-            <a href="./contact.html" class="btn btn-primary btn-lg">Contact Us</a>
-        </div>
+  <div class="container my-5">
+    <div class="text-center mb-5">
+      <h2 class="section-title">What Makes EcoPulse Different?</h2>
+      <p class="text-muted">We're not just another eco blog. Here's how we stand apart.</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-primary text-white text-center py-4" style="color: darkturquoise;">
-        <p>&copy; 2024 My Blog. Follow us on <a href="#" class="text-white">Twitter</a>, <a href="#" class="text-white">Facebook</a>.</p>
-    </footer>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">🌍</div>
+          <h5>Real-Time Global Trends</h5>
+          <p>We monitor and report the most pressing environmental shifts—from polar ice melt to Amazon deforestation.</p>
+        </div>
+      </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">📢</div>
+          <h5>Protest & Movement Coverage</h5>
+          <p>Live coverage of eco protests, climate strikes, and local green initiatives you won’t find on mainstream media.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">📰</div>
+          <h5>Eco News, Every Hour</h5>
+          <p>From legislative changes to activist wins, we deliver curated news on environmental justice and sustainability.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">📊</div>
+          <h5>Track Pollution in Your Area</h5>
+          <p>With data maps and analytics, EcoPulse keeps you updated on air and water quality near you.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">🧠</div>
+          <h5>Educate and Engage</h5>
+          <p>Interactive explainers, infographics, and webinars to raise eco-literacy in schools, offices, and online spaces.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="feature-box">
+          <div class="feature-icon">🌱</div>
+          <h5>Join the Green Community</h5>
+          <p>Connect with like-minded individuals working on climate resilience and regenerative solutions.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-4 mb-4">
+                    <h5 class="mb-3">My Blog</h5>
+                    <p class="text-light mb-3">Sharing knowledge, stories, and insights with our readers worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Follow us on Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Follow us on Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Follow us on Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Follow us on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="./index.html" class="text-light text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="/post.html" class="text-light text-decoration-none">Posts</a></li>
+                        <li class="mb-2"><a href="./about.html" class="text-light text-decoration-none">About</a></li>
+                        <li class="mb-2"><a href="./contact.html" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6 class="mb-3">Categories</h6>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Technology</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Lifestyle</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Business</a></li>
+                        <li class="mb-2"><a href="#" class="text-light text-decoration-none">Travel</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-4 mb-4">
+                    <h6 class="mb-3">Newsletter</h6>
+                    <p class="text-light small mb-3">Subscribe to get our latest posts delivered to your inbox.</p>
+                    <form class="newsletter-form" novalidate>
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Enter your email" 
+                                   aria-label="Email for newsletter" required>
+                            <button class="btn btn-primary" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <hr class="border-secondary">
+            
+            <div class="row py-3">
+                <div class="col-md-6">
+                    <p class="text-light small mb-0">&copy; 2024 My Blog. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none small">Privacy Policy</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none small">Terms of Service</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-light text-decoration-none small">Sitemap</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
